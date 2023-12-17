@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Network</title>
+    <style>
+        html{
+            width: 100%;
+            position: relative;
+            height: 100%;
+            box-sizing: border-box;
+            background: linear-gradient(320deg, rgb(229, 255, 0), rgb(255, 145, 0), rgb(255, 59, 59));
+        }
+        *,
+        *::before,
+        *::after{
+            box-sizing: inherit;
+            margin: 0;
+            padding: 0;
+            font-family: 'Dosis', sans-serif;
+            font-weight: 600;
+        }
+        h1{
+            text-align: center;
+            color: orange;
+            -webkit-text-stroke: 0.25px;
+            -webkit-text-stroke-color: aliceblue;
+            -webkit-text-stroke-width: 1px;
+            margin-top: 2%;
+        }
+        h5{
+            text-align: center;
+            color: red;
+            font-size: x-small;
+    
+        }
+        .container{
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            width: 98%;
+            margin-left: 1%;
+            margin-right: 1%;
+            margin-bottom: 1%;
+            margin-top: 0.5%;
+        }
+        .posts{
+            color: aliceblue;
+            text-align: left;
+            margin-left: 1%;
+            margin-right: 1%;
+            width: 98%;
+        }
+        .posts > div {
+            margin-bottom: 5px;
+            border: 2px solid orange;
+            border-radius: 8px;
+            background-color: red;
+            padding: 3px;
+        }
+        .submit{
+            background-color: transparent;
+            padding-right: 3px;
+            padding-left: 3px;
+            border-color: orange;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Social Network</h1>
+    <h5>created by Ali Saheb</h5>
+    <div class="container">
+        <form action="/" method="post">
+            <input placeholder="Name" name="name">
+            <input placeholder="Content" name="post">
+            <input class="submit" type="submit" value = ✔>
+        </form>
+    </div>
+    <div class="posts">
+        {% for post in posts %}
+        <div>
+            {{post[1] + ': ' + post[2] + ' | ' + post[3]}}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
